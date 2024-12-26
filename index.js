@@ -36,7 +36,7 @@ function getHumanChoice() {
 }
 
 function playRound(humanChoice, computerChoice) {
-    humanChoice = getHumanChoice().toLowerCase();
+    // humanChoice = getHumanChoice().toLowerCase();
     computerChoice = getComputerChoice().toLowerCase();
 
     if (humanChoice === 'paper' && computerChoice === 'rock') {
@@ -62,19 +62,22 @@ function playRound(humanChoice, computerChoice) {
     }
 
 }
-
+// Check out this function logic please!
 function playGame() {
-    let endGame = 5;
-    for (let i = 0; i < endGame; i++) {
-        playRound();
-
-    }
-
-    if (humanScore > computerScore) {
-         console.log('You won the game!')
-    } else {
-        console.log('You lost the game!')
-    }
+    const computerChoice = getComputerChoice();
+   const rockBtn = document.querySelector("#rock");
+   const paperBtn = document.querySelector("#paper");
+   const scissorsBtn = document.querySelector("#scissors");
+   rockBtn.addEventListener("click", () => {
+    playRound("rock", computerChoice);
+    
+   });
+   paperBtn.addEventListener("click", () => {
+    playRound("paper", computerChoice);
+   });
+   scissorsBtn.addEventListener("click", () => {
+    playRound("scissors", computerChoice);
+   });
 }
 
 playGame();

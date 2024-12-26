@@ -80,10 +80,10 @@ function playGame() {
      function checkEndGame() {
         if (humanScore >= 5 || computerScore >= 5) {
           if (humanScore > computerScore) {
-            scoreOutput.textContent = "WINNER";
+            scoreOutput.textContent = "WINNER (refresh to play again)";
 
           } else {
-            scoreOutput.textContent = "LOSER";
+            scoreOutput.textContent = "LOSER (refresh to play again)";
           }
         }
      }
@@ -102,6 +102,7 @@ function playGame() {
        });
     
 }
+
 
 
 playGame();
